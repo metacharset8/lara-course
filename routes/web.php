@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DbTestController;
+use App\Http\Controllers\NamesController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +38,7 @@ Route::get('id{num?}', [UserController::class, 'getUser'])->name('user');
 Route::get('form', [UserController::class, 'showForm'])->name('form');
 
 Route::post('form_process', [UserController::class, 'form'])->name('form_process');
+
+Route::get('dbtest', [DbTestController::class, 'query'])->name('dbtest');
+
+Route::get('names', [NamesController::class, 'index'])->name('names');
