@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DbTestController;
 use App\Http\Controllers\NamesController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -42,3 +43,11 @@ Route::post('form_process', [UserController::class, 'form'])->name('form_process
 Route::get('dbtest', [DbTestController::class, 'query'])->name('dbtest');
 
 Route::get('names', [NamesController::class, 'index'])->name('names');
+Route::get('names/create', [NamesController::class, 'create'])->name('createName');
+Route::get('names/{id}/delete', [NamesController::class, 'delete'])->name('deleteName');
+Route::get('names/{id}', [NamesController::class, 'show'])->name('names/id');
+
+
+
+Route::get('posts', [PostController::class, 'create'])->name('posts');
+Route::get('posts/deleteLast', [PostController::class, 'deleteLast'])->name('posts/deleteLast');
